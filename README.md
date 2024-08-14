@@ -2,6 +2,10 @@
 
 # Nguyễn Thế Phong - Toán Tin K66 - HUST
 
+Dataset: https://www.kaggle.com/datasets/sid321axn/gold-price-prediction-dataset/data
+
+Bài toán dự báo giá vàng gồm các nội dung thực hiện:
+
 I. Predict gold price using regresion:
 1. Linear Regresion
 2. Decision Tree Regression
@@ -12,7 +16,9 @@ I. Predict gold price using regresion:
 
 II. Phương pháp nội suy điểm thiếu Kalman method
 
-III. Sử dụng kĩ thuật Cross-Validation để xử lý overfitting của Linear regresion
+III. Sử dụng phương pháp lựa chọn thuộc tính mRMR để tối ưu thuộc tính
 
-IV. Sử dụng phương pháp GridSearchCV để chọn bộ hyperparameter tốt nhất cho các mô hình
+IV. Sử dụng kĩ thuật Cross-Validation để xử lý overfitting của Linear regresion
+
+V. Sử dụng phương pháp GridSearchCV để chọn bộ hyperparameter tốt nhất cho các mô hình
 
