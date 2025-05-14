@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 import matplotlib.dates as mdates
 
-st.title("🌫️ Dự báo chỉ số chất lượng không khí (AQI) tại làng nghề")
+st.title("🌫️ Nền tảng dự báo ô nhiễm không khí đa chỉ số tại làng nghề")
+st.image("0310khongkhi1.jpg", use_column_width=True)
 
 # File uploader
 uploaded_file = st.file_uploader("📄 Tải lên file dữ liệu (.csv)", type=["csv"])
