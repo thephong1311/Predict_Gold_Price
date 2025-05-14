@@ -13,7 +13,7 @@ st.image("0310khongkhi1.jpg", use_container_width=True)
 option = st.radio("📍 Chọn làng nghề để dự báo:", ["Phú Vinh, Chương Mỹ, Hà Nội", "Làng nghề khác (tải lên dữ liệu)"])
 
 if option == "Phú Vinh, Chương Mỹ, Hà Nội":
-    df = pd.read_csv("phuvinh_data.csv")  # Đảm bảo file này có trong repo khi deploy
+    df = pd.read_csv("air_quality_hourly_data.csv")  # Đảm bảo file này có trong repo khi deploy
     df['Timestamp'] = pd.to_datetime(df['Timestamp'])
     df = df.sort_values('Timestamp')
     st.success("📂 Đã nạp dữ liệu mặc định cho làng nghề Phú Vinh")
