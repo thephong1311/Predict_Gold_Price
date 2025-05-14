@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.dates as mdates
 
 st.title("🌫️ Nền tảng dự báo ô nhiễm không khí đa chỉ số làng nghề mây tre đan")
-st.title("Liên hệ: Nguyễn Thế Phong. Mail: phongnt.216868@sis.hust.edu.vn")
+st.markdown("#### 📬 Liên hệ: Nguyễn Thế Phong — [phongnt.216868@sis.hust.edu.vn](mailto:phongnt.216868@sis.hust.edu.vn)")
 st.image("0310khongkhi1.jpg", use_container_width=True)
 
 
