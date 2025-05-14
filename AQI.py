@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 import matplotlib.dates as mdates
 
-st.title("🌫️ Nền tảng dự báo ô nhiễm không khí đa chỉ số tại làng nghề")
+st.title("🌫️ Nền tảng dự báo ô nhiễm không khí đa chỉ số tại làng nghề MÂY TRE ĐAN")
 st.image("0310khongkhi1.jpg", use_container_width=True)
 
 
@@ -16,7 +16,7 @@ if option == "Phú Vinh, Chương Mỹ, Hà Nội":
     df = pd.read_csv("air_quality_hourly_data.csv")  # Đảm bảo file này có trong repo khi deploy
     df['Timestamp'] = pd.to_datetime(df['Timestamp'])
     df = df.sort_values('Timestamp')
-    st.success("📂 Đã nạp dữ liệu mặc định cho làng nghề Phú Vinh")
+    st.success("📂 Đã nạp dữ liệu mặc định cho làng nghề mây tre đan Phú Vinh")
 
 elif option == "Làng nghề khác (tải lên dữ liệu)":
     uploaded_file = st.file_uploader("📄 Tải lên file dữ liệu (.csv)", type=["csv"])
@@ -118,7 +118,7 @@ else:
 
         timestamps = df['Timestamp'][split_index:].reset_index(drop=True)
 
-        st.subheader(f"📤 Kết quả dự báo {target_variable} (giai đoạn kiểm tra):")
+        st.subheader(f"📤 Kết quả dự báo {target_variable}:")
         fig2, ax2 = plt.subplots(figsize=(12, 6))
         ax2.plot(timestamps, y_test_original.flatten(), label=f'Thực tế {target_variable}', color='orange')
         ax2.plot(timestamps, y_test_pred_original.flatten(), label=f'Dự báo {target_variable}', color='red', linestyle='--')
