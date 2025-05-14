@@ -6,16 +6,28 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.dates as mdates
 
 st.title("🌫️ Nền tảng dự báo ô nhiễm không khí đa chỉ số tại làng nghề")
-st.image("0310khongkhi1.jpg", use_column_width=True)
+st.image("0310khongkhi1.jpg", use_container_width=True)
 
-# File uploader
-uploaded_file = st.file_uploader("📄 Tải lên file dữ liệu (.csv)", type=["csv"])
 
-if uploaded_file is not None:
-    # Đọc và hiển thị dữ liệu
-    df = pd.read_csv(uploaded_file)
+# Chọn nguồn dữ liệu
+option = st.radio("📍 Chọn làng nghề để dự báo:", ["Phú Vinh, Chương Mỹ, Hà Nội", "Làng nghề khác (tải lên dữ liệu)"])
+
+if option == "Phú Vinh, Chương Mỹ, Hà Nội":
+    df = pd.read_csv("phuvinh_data.csv")  # Đảm bảo file này có trong repo khi deploy
     df['Timestamp'] = pd.to_datetime(df['Timestamp'])
     df = df.sort_values('Timestamp')
+    st.success("📂 Đã nạp dữ liệu mặc định cho làng nghề Phú Vinh")
+
+elif option == "Làng nghề khác (tải lên dữ liệu)":
+    uploaded_file = st.file_uploader("📄 Tải lên file dữ liệu (.csv)", type=["csv"])
+    if uploaded_file is not None:
+        df = pd.read_csv(uploaded_file)
+        df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+        df = df.sort_values('Timestamp')
+        st.success("📂 Đã tải thành công dữ liệu bạn cung cấp")
+    else:
+        st.warning("📎 Vui lòng tải lên file .csv để tiếp tục")
+        st.stop()
 
     st.subheader("📌 Thông tin dữ liệu bạn đã tải lên:")
     st.write(df.head())
